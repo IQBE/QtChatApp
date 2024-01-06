@@ -18,8 +18,6 @@ HEADERS += \
 FORMS += \
     chatdialog.ui
 
-TRANSLATIONS += \
-    ChatApp_en_US.ts
 CONFIG += lrelease
 CONFIG += embed_translations
 
