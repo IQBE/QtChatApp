@@ -12,4 +12,4 @@ This is a personal project, made without any external contributors by [Ilya Quat
 - [Qt Creator Documentation](https://doc.qt.io/qtcreator/)
 
 ## License
-This project is licensed under the terms of the [MIT License](LICENSE).
+This project is licensed under the terms of the [MIT license](LICENSE).
