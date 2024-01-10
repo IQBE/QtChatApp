@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>QtChatApp - by Ilya Quateau</string>
   </property>
   <widget class="QWidget" name="horizontalLayoutWidget">
    <property name="geometry">
@@ -62,7 +62,7 @@
      <widget class="QLineEdit" name="chatField"/>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="sendButton">
       <property name="focusPolicy">
        <enum>Qt::NoFocus</enum>
       </property>
