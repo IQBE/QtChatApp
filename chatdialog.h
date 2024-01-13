@@ -20,8 +20,6 @@ class ChatDialog : public QDialog {
         QLineEdit *chatField;
         QPushButton *sendButton;
 
-    public slots:
-
     private slots:
         void SendMessage();
 
