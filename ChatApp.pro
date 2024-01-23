@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -10,10 +10,18 @@ CONFIG += c++17
 
 SOURCES += \
     chatdialog.cpp \
-    main.cpp
+    client.cpp \
+    connection.cpp \
+    main.cpp \
+    peermanager.cpp \
+    server.cpp
 
 HEADERS += \
-    chatdialog.h
+    chatdialog.h \
+    client.h \
+    connection.h \
+    peermanager.h \
+    server.h
 
 FORMS += \
     chatdialog.ui
