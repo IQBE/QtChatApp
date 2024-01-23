@@ -7,7 +7,7 @@
 #include <QMessageBox>
 #include <QScrollBar>
 
-ChatDialog::ChatDialog(QWidget *parent): QDialog(parent), ui(new Ui::chatDialog) {
+ChatDialog::ChatDialog(QWidget *parent): QDialog(parent), ui(new Ui::chatDialog), client(Client::instance()) {
     ui->setupUi(this);
 
     chatField = ui->chatField;
@@ -18,10 +18,10 @@ ChatDialog::ChatDialog(QWidget *parent): QDialog(parent), ui(new Ui::chatDialog)
     connect(chatField, &QLineEdit::returnPressed, this, &ChatDialog::SendMessage);
     connect(sendButton, &QPushButton::pressed, this, &ChatDialog::SendMessage);
 
-    connect(&client, &Client::newParticipant, this, &ChatDialog::newParticipant);
-    connect(&client, &Client::participantLeft, this, &ChatDialog::participantLeft);
+    connect(client, &Client::newParticipant, this, &ChatDialog::newParticipant);
+    connect(client, &Client::participantLeft, this, &ChatDialog::participantLeft);
 
-    myNickName = client.nickName();
+    myNickName = client->nickName();
     newParticipant(myNickName);
     tableFormat.setBorder(0);
     QTimer::singleShot(30 * 1000, this, &ChatDialog::showInformation);
@@ -41,7 +41,7 @@ void ChatDialog::SendMessage() {
         chatDisplay->append(tr("! Unknown command: %1").arg(msg.left(msg.indexOf(' '))));
         chatDisplay->setTextColor(color);
     } else {
-        client.sendMessage(msg);
+        client->sendMessage(msg);
         appendMessage(myNickName, msg);
     }
 
