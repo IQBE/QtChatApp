@@ -21,7 +21,7 @@ ChatDialog::ChatDialog(QWidget *parent): QDialog(parent), ui(new Ui::chatDialog)
     connect(client, &Client::newParticipant, this, &ChatDialog::newParticipant);
     connect(client, &Client::participantLeft, this, &ChatDialog::participantLeft);
 
-    connect(&client, &Client::newMessage, this, &ChatDialog::appendMessage);
+    connect(client, &Client::newMessage, this, &ChatDialog::appendMessage);
 
     myNickName = client->nickName();
     newParticipant(myNickName);
