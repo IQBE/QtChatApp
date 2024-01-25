@@ -9,12 +9,12 @@
 
 class PeerManager;
 
-class Client : public QObject
-{
+class Client : public QObject {
+
     Q_OBJECT
 
 public:
-    Client();
+    static Client* instance();
 
     void sendMessage(const QString &message);
     QString nickName() const;
@@ -32,11 +32,16 @@ private slots:
     void readyForUse();
 
 private:
+    Client();
+    ~Client();
+
     void removeConnection(Connection *connection);
 
     PeerManager *peerManager;
     Server server;
     QMultiHash<QHostAddress, Connection *> peers;
+
+    Q_DISABLE_COPY(Client)
 };
 
 #endif

@@ -23,7 +23,7 @@ class ChatDialog : public QDialog {
         QPushButton *sendButton;
         QTextEdit *chatDisplay;
         QListWidget *userList;
-        Client client;
+        Client *client;
         QString myNickName;
         QTextTableFormat tableFormat;
 
