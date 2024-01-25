@@ -199,7 +199,7 @@ void Connection::processGreeting()
 
 void Connection::processData()
 {
-    qDebug() << "Incomming communication: " << currentDataType;
+    qDebug() << "Incoming communication: " << currentDataType;
 
     switch (currentDataType) {
     case PlainText:
