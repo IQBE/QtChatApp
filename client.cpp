@@ -23,6 +23,8 @@ Client::Client() : peerManager(new PeerManager(this)) {
 void Client::sendMessage(const QString &message) {
     if (message.isEmpty()) return;
 
+    qDebug() << "Messages send to " << peers.count() << "peers";
+
     for (Connection *connection : std::as_const(peers)) connection->sendMessage(message);
 }
 
