@@ -199,6 +199,8 @@ void Connection::processGreeting()
 
 void Connection::processData()
 {
+    qDebug() << "Incomming communication: " << currentDataType;
+
     switch (currentDataType) {
     case PlainText:
         emit newMessage(username, buffer);
